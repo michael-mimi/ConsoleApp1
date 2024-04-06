@@ -1,33 +1,21 @@
 ﻿
-namespace Exercise
+namespace Out
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-           List<int> even = new List<int>();
-            List<int> odd = new List<int>();
-            for (int i = 0; i <=20; i++)
+            List<string> list = new List<string> {"Milk", "Bread", "Nuts" };
+            int index = -1;
+            for (int i = 0; i < list.Count; i++)
             {
-                if (i%2==0)
+                if (list[i].ToLower().Equals("nut"))
                 {
-                    even.Add(i);
-                }
-                else
-                {
-                    odd.Add(i);
+                    index = i;
                 }
             }
-            foreach (var item in even)
-            {
-                Console.Write($"{item} ");
-            }
-            //Console.WriteLine(Environment.NewLine + "Here are the odd numbers:");
-            foreach (var item in odd)
-            {
-                Console.Write($"{item} ");
-            }
+            Console.WriteLine(index > -1 ? "Found": "Not Found");
         }
+
     }
 }
