@@ -39,7 +39,7 @@ namespace Out
     {
         static void Main(string[] args)
         {
-            Person p = new Person("Michael", 40, "Male");
+            Person p = new ("Michael", 40, "Male");
             Console.WriteLine($"The name of p is {p.Name}");
         }
 
