@@ -1,20 +1,46 @@
 ﻿
+using System.Runtime.InteropServices;
+
 namespace Out
 {
+
+    class Person
+    {
+        string name;
+        int age;
+        string gender;
+
+        public string Name
+        {
+            set { name = value; }
+            get { return name; }
+        }
+
+        public int Age
+        {
+            set => age = value;
+            get => age;
+        }
+
+        public string Gender
+        {
+            set => gender = value;
+            get => gender;
+        }
+
+        public Person(string name, int age, string gender)
+        {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            List<string> list = new List<string> {"Milk", "Bread", "Nuts" };
-            int index = -1;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].ToLower().Equals("nut"))
-                {
-                    index = i;
-                }
-            }
-            Console.WriteLine(index > -1 ? "Found": "Not Found");
+            Person p = new Person("Michael", 40, "Male");
+            Console.WriteLine($"The name of p is {p.Name}");
         }
 
     }
